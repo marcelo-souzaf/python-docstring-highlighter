@@ -24,6 +24,9 @@ Attributes:
         one convention to document module level variables and be consistent
         with it.
 
+See Also:
+    `Extension Documentation`_ for more details on the extension.
+
 .. todo::
     * For TODOs directive module
     * You have to also use ``sphinx.ext.todo`` extension;
@@ -31,6 +34,9 @@ Attributes:
 .. _Google Python Style Guide:
     https://google.github.io/styleguide/pyguide.html
     https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+
+.. _Extension Documentation:
+    https://marketplace.visualstudio.com/items?itemName=rodolphebarbanneau.python-docstring-highlighter
 """
 
 module_level_variable1 = 12345
@@ -43,7 +49,7 @@ on the first line, separated by a colon.
 """
 
 
-def function_with_types_in_docstring(param1, param2):
+def function_with_types_in_docstring(param1, param2, param3):
     """Example function with types documented in the docstring.
 
     `PEP 484`_ type annotations are supported. If attribute, parameter, and
@@ -52,7 +58,8 @@ def function_with_types_in_docstring(param1, param2):
 
     Args:
         param1 (int): The first parameter.
-        param2 (str): The second parameter.
+        param2 (int): The second parameter.
+        param3 (str): The third parameter.
 
     Returns:
         bool: The return value. True for success, False otherwise.
@@ -63,12 +70,15 @@ def function_with_types_in_docstring(param1, param2):
     pass
 
 
-def function_with_pep484_type_annotations(param1: int, param2: str) -> bool:
+def function_with_pep484_type_annotations(
+    param1: int, param2: int, param3: str
+) -> bool:
     """Example function with PEP 484 type annotations.
 
     Args:
         param1: The first parameter.
         param2: The second parameter.
+        param3: The third parameter.
 
     Returns:
         The return value. True for success, False otherwise.
@@ -248,7 +258,7 @@ class ExampleClass(object):
             param2: The second parameter.
 
         Returns:
-            True if successful, False otherwise.
+            Sequence[str]: A sequence of strings.
         """
         return True
 

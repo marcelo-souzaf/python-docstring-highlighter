@@ -18,12 +18,18 @@ implicitly created anytime a new section starts.
 The :attr:`module_level_variable1` module level variables must be documented
 in an inline docstring immediately following the variable.
 
+See Also:
+    `Extension Documentation`_ for more details on the extension.
+
 .. todo::
     * For TODOs directive module
     * You have to also use ``sphinx.ext.todo`` extension
 
 .. _Sphinx Python Style Guide:
     https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html
+
+.. _Extension Documentation:
+    https://marketplace.visualstudio.com/items?itemName=rodolphebarbanneau.python-docstring-highlighter
 """
 
 module_level_variable1 = 12345
@@ -36,7 +42,7 @@ the first line, separated by a colon.
 """
 
 
-def function_with_types_in_docstring(param1, param2):
+def function_with_types_in_docstring(param1, param2, param3):
     """Example function with types documented in the docstring.
 
     `PEP 484`_ type annotations are supported. If attribute, parameter, and
@@ -44,10 +50,10 @@ def function_with_types_in_docstring(param1, param2):
     included in the docstring:
 
     :param int param1: The first parameter.
-    :param str param2: The second parameter.
-
+    :param int param2: The second parameter.
+    :param str param3: The third parameter.
+    :return: The return value. True for success, False otherwise.
     :rtype: bool
-    :returns: The return value. True for success, False otherwise.
 
     .. _PEP 484:
         https://www.python.org/dev/peps/pep-0484/
@@ -55,12 +61,15 @@ def function_with_types_in_docstring(param1, param2):
     pass
 
 
-def function_with_pep484_type_annotations(param1: int, param2: str) -> bool:
+def function_with_pep484_type_annotations(
+    param1: int, param2: int, param3: str
+) -> bool:
     """Example function with PEP 484 type annotations.
 
     :param param1: The first parameter.
     :param param2: The second parameter.
-    :returns: The return value. True for success, False otherwise.
+    :param param3: The third parameter.
+    :return: The return value. True for success, False otherwise.
     """
     return True
 
@@ -92,15 +101,15 @@ def module_level_function(param1, param2=None, *args, **kwargs):
     :param kwargs: Miscellaneous.
 
     :rtype: bool
-    :returns: True if successful, False otherwise.
+    :return: True if successful, False otherwise.
 
         The return type is optional and may be specified using the ``:rtype:``
         directive.
 
-        The ``:returns:`` description may span multiple lines and paragraphs.
+        The ``:return:`` description may span multiple lines and paragraphs.
         Following lines should be indented to match the first line.
 
-        The ``:returns:`` description supports any reStructuredText formatting,
+        The ``:return:`` description supports any reStructuredText formatting,
         including literal blocks::
 
             {
@@ -218,8 +227,8 @@ class ExampleClass(object):
 
         :param str param1: The first parameter.
         :param int param2: The second parameter.
-        :returns: True if successful, False otherwise.
-        :rtype: bool
+        :return: A sequence of strings.
+        :rtype: Sequence[str]
 
         .. note::
             Do not include the `self` parameter in the ``:param:``directives.

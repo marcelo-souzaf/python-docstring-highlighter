@@ -11,9 +11,11 @@ This extension is designed to **highlight docstrings** in **Python code**, makin
 
 ![Demo](https://raw.githubusercontent.com/rodolphebarbanneau/python-docstring-highlighter/main/assets/docstring.gif)
 
+> **Note**: The highlighting appearance in your editor may differ from this demo. Your personal color theme and the latest extension updates can affect the visual result. This demo is intended to showcase the general functionality rather than an exact representation.
+
 > **Technical Note**: The highlighting uses the VScode TextMate grammar injection feature, which means that it is compatible with any color theme and should not lead to performance issues (i.e. no custom scripts is executed). The extension uses a custom  grammar to match the docstring patterns and inject the appropriate scopes into the code editor.
 
-> **Technical Note**: TextMate grammar injection can only match one-ligne regular expressions consistently. This means that the extension will not be able to match multi-line patterns in the docstring. This is a limitation of the TextMate grammar injection feature and cannot be worked around.
+> **Technical Note**: TextMate grammar injection can only match one-line regular expressions consistently. This means that the extension will not be able to match multi-line patterns in the docstring. This is a limitation of the TextMate grammar injection feature and cannot be worked around.
 
 ## Requirements
 
@@ -21,7 +23,7 @@ This extension is **only compatible** with the standard [VSCode Python extension
 
 ## Extension Settings
 
-This extensions does not provide specific settings. It is designed to work out of the box with the default color theme. However, you can customize the color theme by overriding the default color theme in your `settings.json` file (see the [Customization](#customization) section).
+This extension does not provide specific settings. It is designed to work out of the box with the default color theme. However, you can customize the color theme by overriding the default color theme in your `settings.json` file (see the [Customization](#customization) section).
 
 ### Available Scopes
 
@@ -31,7 +33,7 @@ The following list shows the available scopes with their available sub-scopes sp
 
 #### `docstring.heading`
 
-Section headings in the docstring (e.g. `Args`, `Returns`, or `Raises`)
+Section headings in the docstring (e.g. `Args`, `Returns`, or `Raises`).
 
 - `.python`
 - `.begin.python`
@@ -58,7 +60,7 @@ Identifiers in the docstring (e.g. `:meth:`, or `:attr:`).
 
 #### `docstring.literal`
 
-Inline literals in the docstring (e.g. ``` ``"Sucssefully executed"`` ```).
+Inline literals in the docstring (e.g. ``` ``"Successful Error"`` ```). 😭
 
 - `.python`
 - `.begin.python`
@@ -103,9 +105,9 @@ You can customize the color theme by overriding the default color theme in your 
       "scope": "docstring.heading.placeholder",
       "settings": {
         "fontStyle": "bold underline",
-        "foreground": "#569cd6",
+        "foreground": "#569cd6"
       }
-    },
+    }
   ]
 }
 ```
@@ -113,6 +115,13 @@ You can customize the color theme by overriding the default color theme in your 
 > See also the extension repository [tests/](https://github.com/rodolphebarbanneau/python-docstring-highlighter/blob/main/tests/.vscode/settings.json) folder for a detailed example of how to override the default color theme.
 
 ## Release Notes
+
+### 0.2.4
+
+- Added colorization for multi-word capitalized sections (e.g., `See Also`)
+- Fixed highlighting for complex type annotations (e.g., `Sequence[str]`)
+- Improved support for NumPy-style multiple parameters (e.g., `param1, param2 : int`)
+- Fixed Sphinx-style return type highlighting (e.g., `:rtype: int`)
 
 ### 0.2.3
 

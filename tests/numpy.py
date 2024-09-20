@@ -15,7 +15,7 @@ Sections support any reStructuredText formatting, including literal blocks::
 
 Section breaks are created with two blank lines. Section breaks are also
 implicitly created anytime a new section starts. Section bodies *may* be
-indented:
+indented.
 
 Notes
 -----
@@ -35,6 +35,9 @@ module_level_variable1 : int
     Either form is acceptable, but the two should not be mixed. Choose one
     convention to document module level variables and be consistent with it.
 
+See Also
+--------
+`Extension Documentation`_ for more details on the extension.
 
 .. todo::
     * For TODOs directive module
@@ -43,6 +46,9 @@ module_level_variable1 : int
 .. _NumPy Python Style Guide:
     https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt
     https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html
+
+.. _Extension Documentation:
+    https://marketplace.visualstudio.com/items?itemName=rodolphebarbanneau.python-docstring-highlighter
 """
 
 module_level_variable1 = 12345
@@ -55,7 +61,7 @@ on the first line, separated by a colon.
 """
 
 
-def function_with_types_in_docstring(param1, param2):
+def function_with_types_in_docstring(param1, param2, param3):
     """Example function with types documented in the docstring.
 
     `PEP 484`_ type annotations are supported. If attribute, parameter, and
@@ -64,10 +70,10 @@ def function_with_types_in_docstring(param1, param2):
 
     Parameters
     ----------
-    param1 : int
-        The first parameter.
-    param2 : str
-        The second parameter.
+    param1, param2 : int
+        The first and second parameters.
+    param3 : str
+        The third parameter.
 
     Returns
     -------
@@ -80,15 +86,17 @@ def function_with_types_in_docstring(param1, param2):
     pass
 
 
-def function_with_pep484_type_annotations(param1: int, param2: str) -> bool:
+def function_with_pep484_type_annotations(
+    param1: int, param2: int, param3: str
+) -> bool:
     """Example function with PEP 484 type annotations.
 
     Parameters
     ----------
-    param1
-        The first parameter.
-    param2
-        The second parameter.
+    param1, param2
+        The first and second parameters.
+    param3
+        The third parameter.
 
     Returns
     -------
@@ -310,8 +318,8 @@ class ExampleClass(object):
 
         Returns
         -------
-        bool
-            True if successful, False otherwise.
+        Sequence[str]
+            A sequence of strings.
         """
         return True
 

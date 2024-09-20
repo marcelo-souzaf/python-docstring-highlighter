@@ -11,6 +11,7 @@
       "type": "extensionHost",
       "request": "launch",
       "args": [
+        "--disable-extension=rodolphebarbanneau.python-docstring-highlighter",
         "--extensionDevelopmentPath=${workspaceFolder}",
         "--folder-uri=${workspaceFolder}/tests",
         "${workspaceFolder}/tests/google.py",
