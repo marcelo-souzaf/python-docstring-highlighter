@@ -37,6 +37,6 @@
 ### Open VSX
 
 * Install `ovsx` by running `npm install -g ovsx`.
-* Run `npx ovsx publish <file> -p <token>`.
+* Run `npx ovsx publish python-docstring-highlighter-<version>.vsix -p <token>`.
 
 See https://github.com/eclipse/openvsx/wiki/publishing-extensions for more information.
