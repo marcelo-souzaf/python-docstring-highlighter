@@ -1,10 +1,10 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Python Docstring (google)",
-	"scopeName": "source.docstring.google.python",
-	"injectionSelector": "L:string.quoted.docstring.multi.python, L:string.quoted.docstring.raw.multi.python",
-	"patterns": [
-		{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Python Docstring (google)",
+  "scopeName": "source.docstring.google.python",
+  "injectionSelector": "L:string.quoted.docstring.multi.python, L:string.quoted.docstring.raw.multi.python",
+  "patterns": [
+    {
       "comment": "Variable (google)",
       "captures": {
         "1": {
@@ -20,7 +20,7 @@
       "match": "(?:^\\s*)((?:-\\s*)?)((?:\\*\\*|\\*)?[a-zA-Z_]\\w*(?:\\[.*\\])?)((?:\\s\\(.*\\))?:)(?=\\s)",
       "name": "docstring.variable.google.python"
     },
-		{
+    {
       "comment": "Inline type (google)",
       "captures": {
         "1": {
@@ -36,6 +36,6 @@
       "match": "(?<=\"{3}|\\'{3})()([^\\s:]+)(:)(?=\\s)",
       "name": "docstring.type.google.python"
     }
-	],
-	"repository": {}
+  ],
+  "repository": { }
 }

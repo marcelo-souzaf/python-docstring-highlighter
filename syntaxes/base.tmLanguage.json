@@ -1,10 +1,10 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Python Docstring",
-	"scopeName": "source.docstring.python",
-	"injectionSelector": "L:string.quoted.docstring.multi.python, L:string.quoted.docstring.raw.multi.python",
-	"patterns": [
-		{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Python Docstring",
+  "scopeName": "source.docstring.python",
+  "injectionSelector": "L:string.quoted.docstring.multi.python, L:string.quoted.docstring.raw.multi.python",
+  "patterns": [
+    {
       "comment": "Heading",
       "captures": {
         "1": {
@@ -25,7 +25,7 @@
       "match": "(?:^\\s*)(=|-){3,}(?:$)",
       "name": "punctuation.definition.tag.docstring.python, docstring.separator.python"
     },
-		{
+    {
       "comment": "Directives used within restructured text ",
       "captures": {
         "1": {
@@ -38,7 +38,7 @@
           "name": "punctuation.definition.tag.end.docstring.python, docstring.directive.end.python"
         }
       },
-      "match": "(?:^\\s*)(\\.\\.\\s)([\\s\\w]+)(:+)",
+      "match": "(?:^\\s*)(\\.{2}\\s)([\\s\\w]+)(:+)",
       "name": "docstring.directive.python"
     },
     {
@@ -86,7 +86,7 @@
           ]
         }
       },
-      "match": "(:func:|:meth:)(`[^`]+`)",
+      "match": "(:(?:func|meth):)(`[^`]+`)",
       "name": "docstring.snippet.function.python"
     },
     {
@@ -150,7 +150,7 @@
           ]
         }
       },
-      "match": "(:attr:|:const:|:param:|:paramref:)(`[^`]+`)",
+      "match": "(:(?:attr|const|param|paramref):)(`[^`]+`)",
       "name": "docstring.snippet.variable.python"
     },
     {
@@ -201,8 +201,8 @@
       "match": "(?:^|[^:])(`)([^`]+)(`_?)",
       "name": "docstring.snippet.python"
     }
-	],
-	"repository": {
+  ],
+  "repository": {
     "identifier": {
       "comment": "Identifier used within interpreted text expressions",
       "patterns": [
@@ -223,5 +223,5 @@
         }
       ]
     }
-	}
+  }
 }

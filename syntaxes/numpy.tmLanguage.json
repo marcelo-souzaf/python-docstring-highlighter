@@ -1,10 +1,10 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Python Docstring (numpy)",
-	"scopeName": "source.docstring.numpy.python",
-	"injectionSelector": "L:string.quoted.docstring.multi.python, L:string.quoted.docstring.raw.multi.python",
-	"patterns": [
-		{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Python Docstring (numpy)",
+  "scopeName": "source.docstring.numpy.python",
+  "injectionSelector": "L:string.quoted.docstring.multi.python, L:string.quoted.docstring.raw.multi.python",
+  "patterns": [
+    {
       "comment": "Variable (numpy)",
       "captures": {
         "1": {
@@ -17,10 +17,26 @@
           "name": "punctuation.definition.tag.end.docstring.python, docstring.variable.end.numpy.python"
         }
       },
-      "match": "(?:^\\s*)((?:-\\s*)?)((?:(?:\\*\\*|\\*)?[a-zA-Z_]\\w*(?:\\[.*\\])?(?:\\s*,\\s*(?=[a-zA-Z_]))?)+)((?:\\s+:\\s+.*)?)(?:$)",
+      "match": "(?:^\\s*)((?:-\\s*)?)(\\*{0,2}[A-Za-z_]\\w*)(\\s*:\\s*[^\\n]+?)?(\\s*,(?!.*,)\\s*.*)?(?:$)",
       "name": "docstring.variable.numpy.python"
     },
-		{
+    {
+      "comment": "Only a type in the line (numpy)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.docstring.python, docstring.variable.begin.numpy.python"
+        },
+        "2": {
+          "name": "entity.name.variable.docstring.python, docstring.variable.placeholder.numpy.python"
+        },
+        "3": {
+          "name": "punctuation.definition.tag.end.docstring.python, docstring.variable.end.numpy.python"
+        }
+      },
+      "match": "(?:^\\s*)()([a-zA-Z_][\\[,\\. \\w\\]]*)(?<=[\\w\\]])(?:\\s*$)",
+      "name": "docstring.variable.numpy.python"
+    },
+    {
       "comment": "Inline type (numpy)",
       "captures": {
         "1": {
@@ -36,6 +52,6 @@
       "match": "(?<=\"{3}|\\'{3})()([^\\s:]+)(:)(?=\\s)",
       "name": "docstring.type.numpy.python"
     }
-	],
-	"repository": {}
+  ],
+  "repository": { }
 }
