@@ -233,7 +233,7 @@ class ExampleClass(object):
         .. note::
             Do not include the `self` parameter in the ``:param:``directives.
         """
-        return True
+        return ["example"]
 
     def __special__(self):
         """By default special members with docstrings are not included.
@@ -269,4 +269,3 @@ class ExampleClass(object):
 
     def _private_without_docstring(self):
         pass
-
