@@ -114,37 +114,4 @@ You can customize the color theme by overriding the default color theme in your 
 
 To easily identify the tokens you want to modify, you can bring up the command palette and search for "Developer: Inspect Editor Tokens and Scopes". When you click a token, you will see the scopes it is associated with and its current color.
 
-## Release Notes
-
-### 0.2.4
-
-- Added colorization for multi-word capitalized sections (e.g., `See Also`)
-- Fixed highlighting for complex type annotations (e.g., `Sequence[str]`)
-- Improved support for NumPy-style multiple parameters (e.g., `param1, param2 : int`)
-- Fixed Sphinx-style return type highlighting (e.g., `:rtype: int`)
-
-### 0.2.3
-
-- Updated base heading pattern end token to match end of line
-- Updated base default placeholder style for interpreted text expression to `string.regexp`
-- Updated `google` and `numpy` variable pattern to accept a leading hyphen and a first uppercase character
-
-### 0.2.2
-
-- Updated VSCode minimum required version to `1.65.2`
-
-### 0.2.1
-
-- Updated syntax highlighting for variables in `google`, `numpy`, and `sphinx` syntaxes
-
-### 0.2.0
-
-- Added documentation
-- Added raw docstring scope support
-- Renamed extension specific scopes to have a more consistent naming convention
-- Updated `google`, `numpy`, and `sphinx` variable regex pattern
-- Updated tests
-
-### 0.1.0
-
-- Initial release
+> See also the extension repository [tests/](https://github.com/rodolphebarbanneau/python-docstring-highlighter/blob/main/tests/.vscode/settings.json) folder for a detailed example of how to override the default color theme.
