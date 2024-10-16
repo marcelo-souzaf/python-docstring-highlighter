@@ -112,7 +112,7 @@ You can customize the color theme by overriding the default color theme in your 
 }
 ```
 
-> See also the extension repository [tests/](https://github.com/rodolphebarbanneau/python-docstring-highlighter/blob/main/tests/.vscode/settings.json) folder for a detailed example of how to override the default color theme.
+To easily identify the tokens you want to modify, you can bring up the command palette and search for "Developer: Inspect Editor Tokens and Scopes". When you click a token, you will see the scopes it is associated with and its current color.
 
 ## Release Notes
 
