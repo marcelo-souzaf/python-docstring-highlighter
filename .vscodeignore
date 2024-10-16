@@ -1,4 +1,8 @@
+.gitignore
 .vscode/**
 .vscode-test/**
-.gitignore
+
+!assets/icon.png
+assets/**
+tests/**
 vsc-extension-quickstart.md
